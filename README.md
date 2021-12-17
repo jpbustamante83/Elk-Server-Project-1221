@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-(![image](https://user-images.githubusercontent.com/25359606/146549142-1b744af1-ac2f-48c5-a6da-183052f61a06.png)
+(![image](https://user-images.githubusercontent.com/25359606/146556850-aa919271-14d9-41ec-940f-1eedfc9d5947.png))
 
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the ansible file may be used to install only certain pieces of it, such as Filebeat.
@@ -14,10 +14,13 @@ These files have been tested and used to generate a live ELK deployment on Azure
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA (Damn Vulnerable Web Application).
 
 Load balancing ensures that the application will be highly available, in addition to restricting access to the network.
+
 -What aspect of security do load balancers protect? What is the advantage of a jump box?
-    -Load balancers protect systems of Denial of Service attacks by shifting attack traffic.  The is a unique point of a load balancer in that it will allow other traffic through making it available whereas it locks down the system from DDoS by shifting that traffic.
+
+-Load balancers protect systems of Denial of Service attacks by shifting attack traffic.  
+The is a unique point of a load balancer in that it will allow other traffic through making it available whereas it locks down the system from DDoS by shifting that traffic.
     
-    -A Jump-box is almost similar to a gateway router and is exposed to the public internet.  However, it sits in front of machines that are NOT exposed to the public internet and therefore controls access to the other machines by allowing connections from specific IP addresses and forwarding to those aforementioned machines.  However, there are still ways to increase security architecture for jump-boxes such as limiting the number of machines that can access it, locking the root account/limiting sudo, implementing MFA,, implementing a host firewall like UFW, and using a VPN.
+-A Jump-box is almost similar to a gateway router and is exposed to the public internet.  However, it sits in front of machines that are NOT exposed to the public internet and therefore controls access to the other machines by allowing connections from specific IP addresses and forwarding to those aforementioned machines.  However, there are still ways to increase security architecture for jump-boxes such as limiting the number of machines that can access it, locking the root account/limiting sudo, implementing MFA,, implementing a host firewall like UFW, and using a VPN.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 
