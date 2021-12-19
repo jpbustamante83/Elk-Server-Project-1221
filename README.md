@@ -68,7 +68,7 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 -What is the main advantage of automating configuration with Ansible?
 
-
+[Ansible Configuration](Files/ansible.cfg)
 
 Ansible automation helps considerably with the representation of Infrastructure as Code (IAC). IAC involves provisioning and management of computing infrastructure and related configuration through machine-processable definition files.
 
@@ -120,27 +120,41 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the configuration and playbook YAML files, to the /etc/ansible/files folder using: 
-  cp ./Resources/filebeat-config.yml /etc/ansible/files/filebeat-config.yml 
-  cp ./Resources/filebeat-play.yml /etc/ansible/files/filebeat-play.yml 
-  cp ./Resources/metricbeat-config.yml /etc/ansible/files/metricbeat-config.yml 
-  cp ./Resources/metricbeat-play.yml /etc/ansible/files/metricbeat-play.yml 
-  cp ./Resources/install-ELK.yml /etc/ansible/files/install-ELK.yml
+
+-Copy the configuration and playbook YAML files, to the /etc/ansible/files folder using:
+ 
+ cp ./Resources/filebeat-config.yml /etc/ansible/files/filebeat-config.yml 
   
-- Update the filebeat-config and metricbeat-config files each to point towards the ELK server IP address, username and password. 
-  (10.2.0.4, elastic & changeme, respectively, for both config files)
+ cp ./Resources/filebeat-play.yml /etc/ansible/files/filebeat-play.yml 
   
-- Update the /etc/ansible/hosts file with two separate sections for the private server IP addresses of the ELK server and the webservers on the internal network. 
-  (see above for IP addresses) configure two sections: [webservers] [elkservers]
+ cp ./Resources/metricbeat-config.yml /etc/ansible/files/metricbeat-config.yml 
+  
+ cp ./Resources/metricbeat-play.yml /etc/ansible/files/metricbeat-play.yml 
+  
+ cp ./Resources/install-ELK.yml /etc/ansible/files/install-ELK.yml
+  
+-Update the filebeat-config and metricbeat-config files each to point towards the ELK server IP address, username and password. 
+  
+ (10.1.0.4, elastic & changeme, respectively, for both config files)
+  
+-Update the /etc/ansible/hosts file with two separate sections for the private server IP addresses of the ELK server and the webservers on the internal network. 
+  
+ (see above for IP addresses) configure two sections: [webservers] [elkservers]
 
 -Run the filebeat and metricbeat playbooks, and ssh into each webserver (10.0.0.4, 10.0.0.5, and 10.0.0.6, respectively) 
+ 
  and run "curl localhost/setup.php" to verify installation worked.
+ 
  enter: ssh azureuser@server-ip-address (replace "server-ip-address" with above IP addresses
  
 -You should get an HTML code response on-screen. Next, navigate to the webservers via the load balancer's public IP address 
+ 
  (*changes on every startup*/setup.php) to check that the installation worked as expected.
  
--Run the install-ELK playbook and navigate to the ELK server's Kibana webpage using the ELK server's public IP address at the following URL (http://111.111.111.111/app/kibana#/home) to check that the installation worked as expected. You should see the Kibana homepage. 
+-Run the install-ELK playbook and navigate to the ELK server's Kibana webpage using the ELK server's public IP address at the following URL 
+
+(http://111.111.111.111/app/kibana#/home) to check that the installation worked as expected. You should see the Kibana homepage. 
+
 (Be sure to put your public IP address in place of the 111.111.111.111)
 
 
