@@ -78,7 +78,13 @@ Install python3-pip
 Install docker via pip
 Increase vitual memory
 Use more memory
+
+[Docker Container](https://github.com/jpbustamante83/Elk-Server-Project-1221/blob/main/Pics/docker%20container.png)
+
 Download and launch a docker elk container - starts docker and establishes the ports being used.
+
+[Docker Start/Attach](https://github.com/jpbustamante83/Elk-Server-Project-1221/blob/main/Pics/docker%20start%20attach.png)
+
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
