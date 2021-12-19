@@ -82,7 +82,7 @@ Download and launch a docker elk container - starts docker and establishes the p
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![image](https://user-images.githubusercontent.com/25359606/146584920-aa2f8437-d814-4890-b9e9-202cc89ce75d.png)
+[Docker PS](https://github.com/jpbustamante83/Elk-Server-Project-1221/blob/main/Pics/docker%20ps.png)
 
 
 ### Target Machines & Beats
