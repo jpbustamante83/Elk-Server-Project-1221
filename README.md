@@ -94,13 +94,21 @@ The following screenshot displays the result of running `docker ps` after succes
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
 
+[Hosts File](Files/hosts)
+
 Web-1 10.0.0.5
+
 Web-2 10.0.0.6
 
 We have installed the following Beats on these machines:
 
-Filebeat
-Metricbeat
+[Filebeat Configuration](Files/filebeat-config.yml)
+
+[Filebeat Playbook](Files/filebeat-playbook.yml)
+
+[Metricbeat Configuration](Files/metricbeat-config.yml)
+
+[Metricbeat Playbook](Files/metricbeat-playbook.yml)
 
 These Beats allow us to collect the following information from each machine:
 
